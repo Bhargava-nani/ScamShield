@@ -1,0 +1,25 @@
+{
+  "model_name": "ScamShield TF-IDF Logistic Regression baseline",
+  "dataset": "UCI SMS Spam Collection",
+  "dataset_messages": 5574,
+  "training_messages": 4459,
+  "test_messages": 1115,
+  "split": "80/20 stratified",
+  "random_state": 42,
+  "vectorizer": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "max_features": 20000,
+    "lowercase": true,
+    "strip_accents": "unicode"
+  },
+  "classifier": "LogisticRegression",
+  "max_iter": 1000,
+  "class_weight": "balanced",
+  "scikit_learn_version": "1.9.1",
+  "reload_predictions_match": true,
+  "intended_use": "Local research prototype; not verified scam detection",
+  "known_evaluation_warning": "Exact message texts overlap between train and test; evaluate with duplicate-group-aware splitting."
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ScamShield DataForge Dataset Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "text",
+    "label",
+    "source_id",
+    "data_type"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 5000
+    },
+    "label": {
+      "type": "string",
+      "enum": ["ham", "spam"]
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "data_type": {
+      "type": "string",
+      "enum": ["REAL", "SYNTHETIC"]
+    },
+    "language": {
+      "type": ["string", "null"],
+      "maxLength": 32
+    },
+    "collected_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "content_sha256": {
+      "type": ["string", "null"],
+      "pattern": "^[a-fA-F0-9]{64}$"
+    }
+  }
+}

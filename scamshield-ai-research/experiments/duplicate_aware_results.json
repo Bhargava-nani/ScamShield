@@ -1,0 +1,54 @@
+{
+  "dataset": "SMSSpamCollection",
+  "split_method": "StratifiedGroupKFold",
+  "random_state": 42,
+  "train_messages": 4459,
+  "test_messages": 1115,
+  "train_unique_texts": 4137,
+  "test_unique_texts": 1034,
+  "exact_text_overlap": 0,
+  "accuracy": 0.9775784753363229,
+  "classification_report": {
+    "ham": {
+      "precision": 0.9957805907172996,
+      "recall": 0.9782383419689119,
+      "f1-score": 0.9869315211709357,
+      "support": 965.0
+    },
+    "spam": {
+      "precision": 0.874251497005988,
+      "recall": 0.9733333333333334,
+      "f1-score": 0.9211356466876972,
+      "support": 150.0
+    },
+    "accuracy": 0.9775784753363229,
+    "macro avg": {
+      "precision": 0.9350160438616438,
+      "recall": 0.9757858376511226,
+      "f1-score": 0.9540335839293165,
+      "support": 1115.0
+    },
+    "weighted avg": {
+      "precision": 0.9794313852852847,
+      "recall": 0.9775784753363229,
+      "f1-score": 0.9780800582359708,
+      "support": 1115.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      944,
+      21
+    ],
+    [
+      4,
+      146
+    ]
+  ],
+  "confusion_matrix_label_order": [
+    "ham",
+    "spam"
+  ],
+  "incorrect_predictions": 25,
+  "note": "Exact-text duplicates are kept in one split. This is one evaluation split, not proof of performance on every real-world scam."
+}

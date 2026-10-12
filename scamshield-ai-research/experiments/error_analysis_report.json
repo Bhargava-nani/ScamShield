@@ -1,0 +1,16 @@
+{
+  "dataset_messages": 5574,
+  "training_messages": 4459,
+  "test_messages": 1115,
+  "accuracy": 0.983857,
+  "true_negatives": 957,
+  "false_positives": 9,
+  "false_negatives": 9,
+  "true_positives": 140,
+  "exact_duplicate_groups": 281,
+  "duplicate_extra_rows": 403,
+  "unique_texts_shared_between_train_and_test": 119,
+  "split": "80/20 stratified; random_state=42",
+  "model": "TF-IDF (1,2 grams; max_features=20000) + LogisticRegression",
+  "message_text_saved": false
+}

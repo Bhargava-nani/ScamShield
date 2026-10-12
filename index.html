@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1220">
+    <meta name="description"
+          content="ScamShield helps people recognise suspicious SMS messages and make safer decisions.">
+    <title>ScamShield | Think Before You Trust</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="ScamShield home">
+            <span class="brand-icon" aria-hidden="true">S</span>
+            <span>ScamShield<small>SMS SAFETY ASSISTANT</small></span>
+        </a>
+        <span class="local-badge">
+            <span class="status-dot"></span>
+            Local demo
+        </span>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="eyebrow">
+                <span aria-hidden="true">✳</span>
+                YOUR DIGITAL SAFETY COMPANION
+            </div>
+            <h1>Pause before you<br><span>trust that message.</span></h1>
+            <p class="hero-copy">
+                Not sure whether an SMS is genuine? Check it for warning signs
+                and get simple advice on what to do next.
+            </p>
+            <div class="hero-note">
+                <span aria-hidden="true">🛡️</span>
+                <span>
+                    <strong>Stay alert, stay in control.</strong>
+                    ScamShield helps you assess a message; it cannot guarantee safety.
+                </span>
+            </div>
+        </section>
+
+        <section class="workspace" aria-labelledby="analyser-title">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">MESSAGE CHECK</p>
+                    <h2 id="analyser-title">Check an SMS</h2>
+                </div>
+                <span class="step-pill">01 / ANALYSE</span>
+            </div>
+
+            <label for="messageInput" class="field-label">
+                Paste or type the message
+            </label>
+
+            <textarea
+                id="messageInput"
+                maxlength="5000"
+                rows="5"
+                placeholder="Example: Your parcel is waiting. Verify your details using this link..."
+                aria-describedby="inputHelp characterCount"
+                spellcheck="true"
+            ></textarea>
+
+            <div class="input-meta">
+                <p id="inputHelp">
+                    Remove passwords, OTPs, account numbers and other private details first.
+                </p>
+                <p id="characterCount" class="counter" aria-live="polite">
+                    <span id="currentCount">0</span> / 5000
+                </p>
+            </div>
+
+            <div class="button-row">
+                <button id="analyseButton" class="primary-button" type="button">
+                    <span aria-hidden="true">⌕</span> Check this message
+                </button>
+                <button id="clearButton" class="secondary-button" type="button">
+                    Clear message
+                </button>
+            </div>
+
+            <p class="privacy-note">
+                <span aria-hidden="true">🔒</span>
+                This demo runs on your computer. Avoid entering sensitive information.
+            </p>
+
+            <section class="result-section" aria-labelledby="resultTitle">
+                <div class="result-heading">
+                    <div>
+                        <p class="section-kicker">YOUR CHECK RESULTS</p>
+                        <h2 id="resultTitle">What should you know?</h2>
+                    </div>
+                </div>
+
+                <div id="result" class="result-placeholder" aria-live="polite" aria-atomic="true">
+                    <span class="placeholder-icon" aria-hidden="true">✓</span>
+                    <div>
+                        <strong>Your result will appear here</strong>
+                        <p>Enter a message above and select “Check this message”.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="safety-grid" aria-label="Important safety reminders">
+            <article class="safety-card">
+                <span class="safety-icon" aria-hidden="true">🔗</span>
+                <h3>Don't rush to click</h3>
+                <p>Open the organisation's official app or type its known website address yourself.</p>
+            </article>
+
+            <article class="safety-card">
+                <span class="safety-icon" aria-hidden="true">🔐</span>
+                <h3>Keep secrets private</h3>
+                <p>Never share an OTP, PIN, password or recovery code with someone who contacts you.</p>
+            </article>
+
+            <article class="safety-card">
+                <span class="safety-icon" aria-hidden="true">☎</span>
+                <h3>Verify independently</h3>
+                <p>Contact a bank, courier or service using contact details you find independently.</p>
+            </article>
+        </section>
+
+        <section class="disclaimer">
+            
+        <section class="evaluation-section" aria-labelledby="evaluation-title">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">MODEL TRANSPARENCY</p>
+                    <h2 id="evaluation-title">How well does ScamShield perform?</h2>
+                </div>
+                <span class="step-pill">02 / EVALUATION</span>
+            </div>
+
+            <p class="evaluation-intro">
+                These are offline results from a duplicate-aware evaluation of
+                the SMS spam dataset, not a guarantee of real-world performance.
+            </p>
+
+            <div class="metrics-grid">
+                <article class="metric-card">
+                    <span class="metric-label">Test accuracy</span>
+                    <strong class="metric-value">97.76%</strong>
+                    <p>Overall correct predictions</p>
+                </article>
+
+                <article class="metric-card">
+                    <span class="metric-label">Spam recall</span>
+                    <strong class="metric-value">97%</strong>
+                    <p>146 of 150 spam messages detected</p>
+                </article>
+
+                <article class="metric-card">
+                    <span class="metric-label">Spam precision</span>
+                    <strong class="metric-value">87%</strong>
+                    <p>Some legitimate messages are flagged</p>
+                </article>
+
+                <article class="metric-card">
+                    <span class="metric-label">Security tests</span>
+                    <strong class="metric-value">13/13</strong>
+                    <p>Automated checks passed</p>
+                </article>
+            </div>
+
+            <div class="evaluation-details">
+                <h3>What did the evaluation find?</h3>
+                <ul>
+                    <li>1,115 messages were tested.</li>
+                    <li>21 legitimate messages were incorrectly flagged as spam.</li>
+                    <li>4 spam messages were incorrectly classified as legitimate.</li>
+                    <li>No identical message text appeared in both the training and test sets.</li>
+                </ul>
+                <p class="evaluation-warning">
+                    <strong>Important:</strong> This is an older SMS dataset.
+                    Results may be different for modern phishing, investment scams,
+                    impersonation messages and other unseen threats.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <span>ScamShield</span>
+        <span>Educational cybersecurity prototype · Not a guarantee of safety</span>
+    </footer>
+</body>
+</html>

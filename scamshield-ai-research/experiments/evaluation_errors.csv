@@ -1,0 +1,26 @@
+﻿actual_label,predicted_label,error_type,message
+spam,ham,false_negative,"FreeMsg Hey there darling it's been 3 week's now and no word back! I'd like some fun you up for it still? Tb ok! XxX std chgs to send, £1.50 to rcv"
+ham,spam,false_positive,As per your request 'Melle Melle (Oru Minnaminunginte Nurungu Vettam)' has been set as your callertune for all Callers. Press *9 to copy your friends Callertune
+ham,spam,false_positive,Yup next stop.
+ham,spam,false_positive,As per your request 'Melle Melle (Oru Minnaminunginte Nurungu Vettam)' has been set as your callertune for all Callers. Press *9 to copy your friends Callertune
+ham,spam,false_positive,As per your request 'Melle Melle (Oru Minnaminunginte Nurungu Vettam)' has been set as your callertune for all Callers. Press *9 to copy your friends Callertune
+ham,spam,false_positive,Hi! You just spoke to MANEESHA V. We'd like to know if you were satisfied with the experience. Reply Toll Free with Yes or No.
+ham,spam,false_positive,Alright i have a new goal now
+spam,ham,false_negative,"Do you realize that in about 40 years, we'll have thousands of old ladies running around with tattoos?"
+ham,spam,false_positive,"Call me da, i am waiting for your call."
+ham,spam,false_positive,"We have sent JD for Customer Service cum Accounts Executive to ur mail id, For details contact us"
+ham,spam,false_positive,Yes.. now only saw your message..
+ham,spam,false_positive,As per your request 'Maangalyam (Alaipayuthe)' has been set as your callertune for all Callers. Press *9 to copy your friends Callertune
+ham,spam,false_positive,"Sir, i am waiting for your call."
+ham,spam,false_positive,Hi! You just spoke to MANEESHA V. We'd like to know if you were satisfied with the experience. Reply Toll Free with Yes or No.
+spam,ham,false_negative,"Hello darling how are you today? I would love to have a chat, why dont you tell me what you look like and what you are in to sexy?"
+spam,ham,false_negative,Not heard from U4 a while. Call me now am here all night with just my knickers on. Make me beg for it like U did last time 01223585236 XX Luv Nikiyu4.net
+ham,spam,false_positive,I'm at home. Please call
+ham,spam,false_positive,As per your request 'Maangalyam (Alaipayuthe)' has been set as your callertune for all Callers. Press *9 to copy your friends Callertune
+ham,spam,false_positive,I'm at home. Please call
+ham,spam,false_positive,Hi! You just spoke to MANEESHA V. We'd like to know if you were satisfied with the experience. Reply Toll Free with Yes or No.
+ham,spam,false_positive,I'm at home. Please call
+ham,spam,false_positive,Miss call miss call khelate kintu opponenter miss call dhorte lage. Thats d rule. One with great phone receiving quality wins.
+ham,spam,false_positive,These won't do. Have to move on to morphine
+ham,spam,false_positive,Hi.:)technical support.providing assistance to us customer through call and email:)
+ham,spam,false_positive,"We have sent JD for Customer Service cum Accounts Executive to ur mail id, For details contact us"

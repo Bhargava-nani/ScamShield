@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ScamShield DataForge Model Metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "model_id",
+    "model_version",
+    "created_at",
+    "training_dataset_ids",
+    "evaluation_status",
+    "promotion_status"
+  ],
+  "properties": {
+    "model_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "model_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "training_dataset_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "evaluation_status": {
+      "type": "string",
+      "enum": ["NOT_EVALUATED", "PASSED", "FAILED", "INCOMPLETE"]
+    },
+    "promotion_status": {
+      "type": "string",
+      "enum": ["NOT_PROMOTED", "PENDING_APPROVAL", "APPROVED", "REJECTED", "ROLLED_BACK"]
+    },
+    "metrics": {
+      "type": ["object", "null"],
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "code_revision": {
+      "type": ["string", "null"],
+      "maxLength": 128
+    },
+    "approval_reference": {
+      "type": ["string", "null"],
+      "maxLength": 256
+    }
+  }
+}
