@@ -3,6 +3,7 @@ from pathlib import Path
 
 import joblib
 from flask import Flask, jsonify, request, send_from_directory
+from rate_limit import rate_limit
 
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = BASE_DIR.parent
@@ -73,6 +74,7 @@ def health():
 
 
 @app.post("/api/analyse")
+@rate_limit(limit=20, window_seconds=60)
 def analyse():
     if not request.is_json:
         return jsonify({"error": "Send a JSON request."}), 415
