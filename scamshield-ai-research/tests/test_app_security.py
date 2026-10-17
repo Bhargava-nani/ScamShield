@@ -1,0 +1,87 @@
+import sys
+import unittest
+from pathlib import Path
+
+from flask import Flask
+
+RESEARCH_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(RESEARCH_DIR))
+
+import app as scamshield_app  # noqa: E402
+
+
+class FlaskBackendSecurityTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.client = scamshield_app.app.test_client()
+
+    def test_health_endpoint_returns_expected_status(self):
+        response = self.client.get("/api/health")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.get_json()["status"], "ok")
+
+    def test_security_headers_are_present(self):
+        response = self.client.get("/api/health")
+        self.assertEqual(response.headers.get("X-Content-Type-Options"), "nosniff")
+        self.assertEqual(response.headers.get("X-Frame-Options"), "DENY")
+        self.assertEqual(response.headers.get("Referrer-Policy"), "no-referrer")
+        self.assertIn("frame-ancestors 'none'", response.headers.get(
+            "Content-Security-Policy", ""
+        ))
+        self.assertEqual(response.headers.get("Cache-Control"), "no-store")
+
+    def test_analysis_rejects_non_json(self):
+        response = self.client.post(
+            "/api/analyse",
+            data="message=hello",
+            content_type="application/x-www-form-urlencoded",
+        )
+        self.assertEqual(response.status_code, 415)
+
+    def test_analysis_rejects_invalid_json_shape(self):
+        response = self.client.post(
+            "/api/analyse",
+            json=["not", "an", "object"],
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_analysis_rejects_missing_message(self):
+        response = self.client.post("/api/analyse", json={})
+        self.assertEqual(response.status_code, 400)
+
+    def test_analysis_rejects_non_string_message(self):
+        response = self.client.post(
+            "/api/analyse",
+            json={"message": 12345},
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_analysis_rejects_blank_message(self):
+        response = self.client.post(
+            "/api/analyse",
+            json={"message": "   "},
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_analysis_rejects_message_over_limit(self):
+        response = self.client.post(
+            "/api/analyse",
+            json={"message": "x" * 5001},
+        )
+        self.assertEqual(response.status_code, 413)
+
+    def test_oversized_http_body_is_rejected(self):
+        response = self.client.post(
+            "/api/analyse",
+            data="{" + (" " * 20000) + "}",
+            content_type="application/json",
+        )
+        self.assertEqual(response.status_code, 413)
+
+    def test_homepage_route_is_available(self):
+        response = self.client.get("/")
+        try:
+            self.assertEqual(response.status_code, 200)
+        finally:
+            response.close()
+
